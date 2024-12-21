@@ -8,7 +8,7 @@ LABEL       author="Void Creations" maintainer="contact@voidcreations.net"
 ENV         DEBIAN_FRONTEND=noninteractive
 
 RUN         apt update -y \
-            && apt install -y netcat iproute2 \
+            && apt install -y netcat-openbsd iproute2 \
             && useradd -d /home/container -m container -s /bin/bash
 
 USER        container
