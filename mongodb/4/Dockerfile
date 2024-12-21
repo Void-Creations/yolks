@@ -8,7 +8,8 @@ LABEL       author="Michael Parker" maintainer="parker@pterodactyl.io"
 ENV         DEBIAN_FRONTEND=noninteractive
 
 RUN         apt-get update && apt-get install -y wget gnupg \
-            && wget -qO - https://www.mongodb.org/static/pgp/server-4.4.asc | apt-key add - \
+            && apt-key del 656408E390CFB1F5 || true \
+            && wget -qO - https://pgp.mongodb.com/server-4.4.asc | apt-key add - \
             && apt-get update -y \
             && apt-get install -y netcat-openbsd iproute2 \
             && useradd -d /home/container -m container -s /bin/bash
