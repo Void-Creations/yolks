@@ -5,7 +5,7 @@ FROM        --platform=$TARGETOS/$TARGETARCH mongo:8.0.0
 
 LABEL       author="Void Creations" maintainer="contact@voidcreations.net"
 
-ENV         DEBIAN_FRONTEND noninteractive
+ENV         DEBIAN_FRONTEND=noninteractive
 
 RUN         apt update -y \
             && apt install -y netcat iproute2 \
